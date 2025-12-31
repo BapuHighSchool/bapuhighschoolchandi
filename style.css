@@ -57,3 +57,7 @@ body {
 }
 
 .feedback
+/* Feedback hidden by default */
+#feedback {
+    display: none;
+}
