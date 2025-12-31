@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <title>Bapu +2 High School, Chandi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS FILE -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Basic safety CSS (if style.css fails) */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        section {
+            padding: 20px;
+        }
+        #ictSection,
+        #videoSection,
+        #feedbackSection {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -14,25 +33,18 @@
     <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
     <p>Bapu +2 High School, Chandi (Nalanda)</p>
 </div>
+
+<!-- MENU / TABS -->
 <div class="menu">
     <a href="javascript:void(0)" onclick="showHome()">Home</a>
-    <a href="javascript:void(0)" onclick="showFeedback()">Feedback</a>
     <a href="javascript:void(0)" onclick="showICT()">ICT</a>
-        <a href="javascript:void(0)" onclick="showVIDEOS()">VIDEOS</a>
+    <a href="javascript:void(0)" onclick="showVideos()">Videos</a>
+    <a href="javascript:void(0)" onclick="showFeedback()">Feedback</a>
 </div>
 
-<!-- MENU -->
-<div class="menu">
-    <a href="#home">Home</a>
-    <a href="ict.html">ICT</a>
-    <a href="videos.html">Videos</a>
-    <a href="javascript:void(0)" onclick="openFeedback()">Feedback</a>
-
-</div>
-
+<!-- HOME SECTION -->
 <section id="homeSection">
 
-    <!-- HERO -->
     <div class="hero">
         <div class="overlay">
             <h2>Welcome</h2>
@@ -42,7 +54,6 @@
         </div>
     </div>
 
-    <!-- NOTICE BOARD -->
     <div class="notice">
         <h3>📢 Notice Board</h3>
         <ul>
@@ -53,39 +64,67 @@
 
 </section>
 
+<!-- ICT SECTION -->
+<section id="ictSection">
+    <h2>💻 ICT Facilities</h2>
+    <p>
+        हमारे विद्यालय में स्मार्ट क्लास, कंप्यूटर लैब एवं डिजिटल शिक्षा की सुविधा उपलब्ध है।
+    </p>
+</section>
 
+<!-- VIDEOS SECTION -->
+<section id="videoSection">
+    <h2>🎥 School Videos</h2>
+    <p>
+        विद्यालय के कार्यक्रमों एवं शैक्षणिक वीडियो यहाँ उपलब्ध होंगे।
+    </p>
+</section>
+
+<!-- FEEDBACK SECTION -->
 <section id="feedbackSection">
-    <h2>Feedback / Enquiry</h2>
+    <h2>📝 Feedback / Enquiry</h2>
 
     <input type="text" placeholder="Your Name">
     <input type="email" placeholder="Your Email">
     <textarea placeholder="Your Message"></textarea>
+    <br><br>
     <button>Submit</button>
 </section>
-
 
 <!-- FOOTER -->
 <footer>
     © 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
+
+<!-- JAVASCRIPT -->
 <script>
-function openFeedback() {
-    document.getElementById("feedback").style.display = "block";
-    document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
-}
-</script>
-<script>
-function showHome() {
-    document.getElementById("homeSection").style.display = "block";
+function hideAll() {
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("ictSection").style.display = "none";
+    document.getElementById("videoSection").style.display = "none";
     document.getElementById("feedbackSection").style.display = "none";
 }
 
+function showHome() {
+    hideAll();
+    document.getElementById("homeSection").style.display = "block";
+}
+
+function showICT() {
+    hideAll();
+    document.getElementById("ictSection").style.display = "block";
+}
+
+function showVideos() {
+    hideAll();
+    document.getElementById("videoSection").style.display = "block";
+}
+
 function showFeedback() {
-    document.getElementById("homeSection").style.display = "none";
+    hideAll();
     document.getElementById("feedbackSection").style.display = "block";
 }
 </script>
-
 
 </body>
 </html>
