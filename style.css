@@ -65,4 +65,10 @@ body {
 #feedbackSection {
     display: none;
 }
+#ictSection,
+#videoSection,
+#feedbackSection {
+    display: none;
+}
+
 
