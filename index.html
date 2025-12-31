@@ -69,6 +69,18 @@ function openFeedback() {
     document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
 }
 </script>
+<script>
+function showHome() {
+    document.getElementById("homeSection").style.display = "block";
+    document.getElementById("feedbackSection").style.display = "none";
+}
+
+function showFeedback() {
+    document.getElementById("homeSection").style.display = "none";
+    document.getElementById("feedbackSection").style.display = "block";
+}
+</script>
+
 
 </body>
 </html>
