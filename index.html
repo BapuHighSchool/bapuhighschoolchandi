@@ -1,42 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bapu +2 High School, Chandi (Nalanda)</title>
-<style>
-body{font-family:Arial;margin:0}
-header{background:#0b5394;color:#fff;padding:15px;text-align:center}
-nav{background:#eee;padding:10px;text-align:center}
-nav a{margin:10px;text-decoration:none;font-weight:bold}
-section{padding:20px}
-footer{background:#f2f2f2;padding:10px;text-align:center;font-size:14px}
-</style>
+<title>Bapu +2 High School, Chandi</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header>
-<h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
-<h3>Bapu +2 High School, Chandi (Nalanda)</h3>
+  <img src="images/logo.png" class="logo">
+  <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
+  <p>Bapu +2 High School, Chandi (Nalanda)</p>
 </header>
-<nav>
-<a href="index.html">Home</a>
-<a href="ict.html">ICT Support</a>
-<a href="videos.html">Educational Videos</a>
-</nav>
-<section>
-<h2>Welcome</h2>
-<p>Welcome to the official website of Bapu +2 High School, Chandi (Nalanda).</p>
-</section>
-<footer>
-यह वेबसाइट विद्यालय के आईसीटी / कंप्यूटर विभाग द्वारा विकसित एवं संधारित की जाती है।<br>
-This website is developed and maintained by the ICT / Computer Department of the school.
-  <div style="text-align:center; margin:20px 0; font-size:14px;">
-    👁️ Visitors Count:
-    <img src="https://hitwebcounter.com/counter/counter.php?page=123456&style=0006&nbdigits=6&type=page&initCount=0"
-         title="Total Visitors" Alt="Visitor Counter" />
+
+<div class="hero">
+  <img src="images/home.jpg" alt="School Image">
+  <div class="notice-board">
+    <h3>📢 Notice Board</h3>
+    <ul id="noticeList"></ul>
+  </div>
 </div>
 
-</footer>
+<section class="form-section">
+  <h2>Feedback / Enquiry</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="text" placeholder="Mobile No" required>
+    <input type="text" placeholder="Class (9–12)" required>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<script src="js/slider.js"></script>
 </body>
 </html>
-<!-- github pages deployment trigger -->
