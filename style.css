@@ -1,0 +1,10 @@
+body{margin:0;font-family:Arial;background:#f5f5f5;}
+header{background:#0b4da2;color:#fff;text-align:center;padding:10px;}
+.logo{width:70px;}
+.hero{position:relative;}
+.hero img{width:100%;height:450px;object-fit:cover;}
+.notice-board{position:absolute;top:20px;right:20px;width:260px;background:#fff;padding:10px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.3);}
+.notice-board h3{background:#ff6a00;color:#fff;padding:5px;text-align:center;}
+.form-section{background:#fff;padding:20px;margin:20px;}
+form input,textarea{width:100%;padding:8px;margin:5px 0;}
+button{background:#0b4da2;color:#fff;padding:10px;border:none;width:100%;}
