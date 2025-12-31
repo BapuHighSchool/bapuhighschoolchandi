@@ -2,92 +2,64 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <title>Bapu +2 High School, Chandi (Nalanda)</title>
+    <title>Bapu +2 High School, Chandi</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="header">
-    <img src="images/logo.png" alt="School Logo" class="logo">
+    <img src="images/logo.png" class="logo">
     <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
     <p>Bapu +2 High School, Chandi (Nalanda)</p>
 </header>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-    <a href="#">Home</a>
+<!-- MENU -->
+<nav class="menu">
+    <a href="#home">Home</a>
     <a href="ict.html">ICT</a>
     <a href="videos.html">Videos</a>
     <a href="#feedback">Feedback</a>
 </nav>
 
-<!-- ================= HERO / HOME ================= -->
-<section class="hero">
-    <img src="images/school1.jpg" alt="School Building">
-</section>
-
-<!-- ================= MAIN CONTENT ================= -->
-<div class="container">
-
-    <!-- NOTICE BOARD -->
-    <aside class="notice-board">
-        <h3>📢 Notice Board</h3>
-        <ul id="noticeList">
-            <li>Loading notices...</li>
-        </ul>
-    </aside>
-
-    <!-- WELCOME CONTENT -->
-    <section class="content">
+<!-- HOME SECTION -->
+<section id="home" class="hero">
+    <div class="overlay">
         <h2>Welcome</h2>
         <p>
             बापू +2 उच्च विद्यालय, चंडी (नालंदा) में आपका स्वागत है।
             यह विद्यालय गुणवत्तापूर्ण शिक्षा के लिए प्रतिबद्ध है।
         </p>
-    </section>
+    </div>
+</section>
 
-</div>
+<!-- NOTICE BOARD -->
+<section class="notice">
+    <h3>📢 Notice Board</h3>
+    <ul>
+        <li>Class 9 admission open</li>
+        <li>Class 11 registration last date 30 July</li>
+        <li>Annual exam timetable released</li>
+    </ul>
+</section>
 
-<!-- ================= FEEDBACK ================= -->
-<section class="form-section" id="feedback">
+<!-- FEEDBACK -->
+<section id="feedback" class="feedback">
     <h2>Feedback / Enquiry</h2>
-
     <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+        <textarea placeholder="Your Message"></textarea>
         <button type="submit">Submit</button>
     </form>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>© 2025–26 Bapu +2 High School, Chandi (Nalanda)</p>
-
+<footer>
+    © 2025 Bapu +2 High School, Chandi (Nalanda)
 </footer>
-
-<!-- ================= JS ================= -->
-<script src="slider.js"></script>
-<script>
-fetch("notices.json")
-  .then(res => res.json())
-  .then(data => {
-    let list = document.getElementById("noticeList");
-    list.innerHTML = "";
-    data.forEach(n => {
-      let li = document.createElement("li");
-      li.textContent = n;
-      list.appendChild(li);
-    });
-  });
-</script>
 
 </body>
 </html>
