@@ -157,50 +157,44 @@
 
 <!-- 👇 YAHAN ADD KARNA HAI -->
 <script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-}, 5000);
-
-function setActive(el) {
-    document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
-    el.classList.add("active");
-}
-
 function hideAll() {
     document.getElementById("homeSection").style.display = "none";
+    document.getElementById("aboutSection").style.display = "none";
     document.getElementById("ictSection").style.display = "none";
     document.getElementById("videoSection").style.display = "none";
     document.getElementById("feedbackSection").style.display = "none";
+
+    document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
 }
 
 function showHome(el) {
     hideAll();
     document.getElementById("homeSection").style.display = "block";
-    setActive(el);
+    el.classList.add("active");
+}
+
+function showAbout(el) {
+    hideAll();
+    document.getElementById("aboutSection").style.display = "block";
+    el.classList.add("active");
 }
 
 function showICT(el) {
     hideAll();
     document.getElementById("ictSection").style.display = "block";
-    setActive(el);
+    el.classList.add("active");
 }
 
 function showVideos(el) {
     hideAll();
     document.getElementById("videoSection").style.display = "block";
-    setActive(el);
+    el.classList.add("active");
 }
 
 function showFeedback(el) {
     hideAll();
     document.getElementById("feedbackSection").style.display = "block";
-    setActive(el);
+    el.classList.add("active");
 }
-
-showHome(document.querySelector(".menu a"));
 </script>
+
