@@ -132,3 +132,20 @@ body {
 #aboutSection {
     display: none;
 }
+/* ===== HEADER FLEX LAYOUT ===== */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.school-text h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.school-text p {
+    margin: 4px 0 0;
+    font-size: 14px;
+}
