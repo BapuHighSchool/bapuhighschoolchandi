@@ -117,9 +117,9 @@
 
 <!-- ================= JAVASCRIPT ================= -->
 <script>
-/* ----- TAB CONTROL ----- */
-function hideAll() {
-    document.getElementById("homeSection").style.display = "none";
+function resetMenu() {
+    document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
+
     document.getElementById("aboutSection").style.display = "none";
     document.getElementById("ictSection").style.display = "none";
     document.getElementById("videoSection").style.display = "none";
@@ -127,52 +127,50 @@ function hideAll() {
 
     document.getElementById("homeText").style.display = "none";
     document.getElementById("aboutText").style.display = "none";
-
-    document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
 }
 
 function showHome(el) {
-    hideAll();
-    document.getElementById("homeSection").style.display = "block";
+    resetMenu();
     document.getElementById("homeText").style.display = "block";
     el.classList.add("active");
 }
 
 function showAbout(el) {
-    hideAll();
-    document.getElementById("aboutSection").style.display = "block";
+    resetMenu();
     document.getElementById("aboutText").style.display = "block";
+    document.getElementById("aboutSection").style.display = "block";
     el.classList.add("active");
 }
 
 function showICT(el) {
-    hideAll();
+    resetMenu();
     document.getElementById("ictSection").style.display = "block";
     el.classList.add("active");
 }
 
 function showVideos(el) {
-    hideAll();
+    resetMenu();
     document.getElementById("videoSection").style.display = "block";
     el.classList.add("active");
 }
 
 function showFeedback(el) {
-    hideAll();
+    resetMenu();
     document.getElementById("feedbackSection").style.display = "block";
     el.classList.add("active");
 }
 
-/* ----- IMAGE SLIDER ----- */
+/* SLIDER */
 let currentSlide = 0;
-const slides = document.querySelectorAll(".hero-slider .slide");
+const slides = document.querySelectorAll(".slide");
 
 setInterval(() => {
     slides[currentSlide].classList.remove("active");
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add("active");
-}, 4000);
+}, 3000);
 </script>
+
 
 </body>
 </html>
