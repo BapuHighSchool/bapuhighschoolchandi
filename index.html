@@ -4,104 +4,149 @@
 <meta charset="UTF-8">
 <title>Bapu +2 High School, Chandi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{margin:0;font-family:Arial}
+
+/* HEADER */
+.header{background:#0d47a1;color:#fff;padding:15px}
+.header-inner{display:flex;align-items:center;max-width:1200px;margin:auto}
+.logo{width:80px;margin-right:15px}
+.school-text h1{margin:0;font-size:26px}
+.school-text p{margin:3px 0 0}
+
+/* MENU */
+.menu{background:#1565c0;text-align:center;padding:10px}
+.menu a{color:#fff;margin:0 15px;cursor:pointer;text-decoration:none;font-weight:bold}
+.menu a.active{background:#0d47a1;padding:8px 15px;border-radius:5px}
+
+/* SLIDER */
+.hero-slider{position:relative;height:420px;overflow:hidden}
+.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
+.slide.active{opacity:1}
+
+/* OVERLAY */
+.hero-content{position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:2}
+
+/* LEFT TEXT */
+.hero-box{
+position:absolute;left:40px;top:120px;
+background:rgba(0,0,0,.55);
+color:#fff;padding:20px;width:320px;border-radius:10px
+}
+
+/* NOTICE */
+.notice-box{
+position:absolute;right:40px;bottom:40px;
+background:#fff;padding:15px;width:300px;border-radius:10px
+}
+
+/* SECTIONS */
+.section{display:none;padding:40px;max-width:1000px;margin:auto}
+
+/* FOOTER */
+footer{text-align:center;padding:15px;background:#f2f2f2}
+</style>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-    <div class="header-inner">
-        <img src="images/logo.png" class="logo">
-        <div class="school-text">
-            <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
-            <p>Bapu +2 High School, Chandi (Nalanda)</p>
-        </div>
+  <div class="header-inner">
+    <img src="images/logo.png" class="logo">
+    <div class="school-text">
+      <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
+      <p>Bapu +2 High School, Chandi (Nalanda)</p>
     </div>
+  </div>
 </div>
 
 <!-- MENU -->
 <div class="menu">
-    <a onclick="showSection('home')" class="active">Home</a>
-    <a onclick="showSection('about')">About</a>
-    <a onclick="showSection('ict')">ICT</a>
-    <a onclick="showSection('videos')">Videos</a>
-    <a onclick="showSection('feedback')">Feedback</a>
+  <a class="active" onclick="showHome(this)">Home</a>
+  <a onclick="showSection('about',this)">About</a>
+  <a onclick="showSection('ict',this)">ICT</a>
+  <a onclick="showSection('videos',this)">Videos</a>
+  <a onclick="showSection('feedback',this)">Feedback</a>
 </div>
 
-<!-- HERO SLIDER -->
-<div class="hero-slider">
-    <img src="images/school1.png" class="slide active">
-    <img src="images/school2.jpeg" class="slide">
-    <img src="images/school3.jpeg" class="slide">
+<!-- SLIDER -->
+<div class="hero-slider" id="home">
+  <img src="images/school1.png" class="slide active">
+  <img src="images/school2.jpeg" class="slide">
+  <img src="images/school3.jpeg" class="slide">
 
-    <div class="hero-content">
-        <!-- LEFT TEXT -->
-        <div class="hero-box">
-            <h2>Welcome</h2>
-            <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
-        </div>
-
-        <!-- RIGHT NOTICE -->
-        <div class="notice-box">
-            <h3>📢 Notice Board</h3>
-            <ul>
-                <li>Class 9 Admission Open</li>
-                <li>Class 11 Registration Ongoing</li>
-            </ul>
-        </div>
+  <div class="hero-content">
+    <div class="hero-box">
+      <h2>Welcome</h2>
+      <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
     </div>
+
+    <div class="notice-box">
+      <h3>📢 Notice Board</h3>
+      <ul>
+        <li>Class 9 Admission Open</li>
+        <li>Class 11 Registration Ongoing</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<!-- SECTIONS -->
-<section id="home" class="section active"></section>
-
+<!-- ABOUT -->
 <section id="about" class="section">
-    <h2>🏫 About School</h2>
-    <p>कक्षा 9 से 12 तक सरकारी शिक्षा संस्थान</p>
+<h2>🏫 About School</h2>
+<p>कक्षा 9 से 12 तक सरकारी शिक्षा संस्थान</p>
 </section>
 
+<!-- ICT -->
 <section id="ict" class="section">
-    <h2>💻 ICT Lab</h2>
-    <p>विद्यालय में कंप्यूटर एवं ICT सुविधा उपलब्ध है।</p>
+<h2>💻 ICT Lab</h2>
+<p>विद्यालय में कंप्यूटर एवं ICT सुविधा उपलब्ध है।</p>
 </section>
 
+<!-- VIDEOS -->
 <section id="videos" class="section">
-    <h2>🎥 Videos</h2>
-    <p>विद्यालय के कार्यक्रमों के वीडियो यहाँ होंगे।</p>
+<h2>🎥 Videos</h2>
+<p>विद्यालय से संबंधित वीडियो यहाँ दिखेंगे।</p>
 </section>
 
+<!-- FEEDBACK -->
 <section id="feedback" class="section">
-    <h2>📝 Feedback</h2>
-    <input placeholder="Name"><br><br>
-    <input placeholder="Email"><br><br>
-    <textarea placeholder="Message"></textarea><br><br>
-    <button>Submit</button>
+<h2>📝 Feedback</h2>
+<input placeholder="Name"><br><br>
+<input placeholder="Email"><br><br>
+<textarea placeholder="Message"></textarea><br><br>
+<button>Submit</button>
 </section>
 
-<footer>
-© 2025–26 Bapu +2 High School, Chandi (Nalanda)
-</footer>
+<footer>© 2025–26 Bapu +2 High School, Chandi (Nalanda)</footer>
 
-<!-- JS -->
 <script>
-function showSection(id){
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+/* MENU LOGIC */
+function showSection(id,el){
+ document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+ document.getElementById('home').style.display='none';
+ document.querySelectorAll('.menu a').forEach(a=>a.classList.remove('active'));
+ document.getElementById(id).style.display='block';
+ el.classList.add('active');
+}
 
-    document.getElementById(id).classList.add('active');
-    event.target.classList.add('active');
+function showHome(el){
+ document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+ document.getElementById('home').style.display='block';
+ document.querySelectorAll('.menu a').forEach(a=>a.classList.remove('active'));
+ el.classList.add('active');
 }
 
 /* SLIDER */
-let i = 0;
-const slides = document.querySelectorAll('.slide');
-
+let i=0;
+let slides=document.querySelectorAll('.slide');
 setInterval(()=>{
-    slides[i].classList.remove('active');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('active');
-},3000);
+ slides[i].classList.remove('active');
+ i=(i+1)%slides.length;
+ slides[i].classList.add('active');
+},4000);
 </script>
 
 </body>
