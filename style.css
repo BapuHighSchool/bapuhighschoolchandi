@@ -204,3 +204,15 @@ body {
 .notice-box h3 {
     margin-top: 0;
 }
+/* ===== SECTION CONTROL ===== */
+.section {
+    display: none;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section.active {
+    display: block;
+}
+
