@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <title>Bapu +2 High School, Chandi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Bapu +2 High School, Chandi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <div class="header">
     <div class="header-inner">
-        <img src="images/logo.png" class="logo" alt="School Logo">
-
+        <img src="images/logo.png" class="logo">
         <div class="school-text">
             <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
             <p>Bapu +2 High School, Chandi (Nalanda)</p>
@@ -20,34 +20,29 @@
     </div>
 </div>
 
-
-<!-- ================= MENU ================= -->
+<!-- MENU -->
 <div class="menu">
-    <a onclick="showHome(this)" class="active">Home</a>
-    <a onclick="showAbout(this)">About</a>
-    <a onclick="showICT(this)">ICT</a>
-    <a onclick="showVideos(this)">Videos</a>
-    <a onclick="showFeedback(this)">Feedback</a>
+    <a onclick="showSection('home')" class="active">Home</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('ict')">ICT</a>
+    <a onclick="showSection('videos')">Videos</a>
+    <a onclick="showSection('feedback')">Feedback</a>
 </div>
 
-<!-- ================= HERO SLIDER (COMMON BACKGROUND) ================= -->
+<!-- HERO SLIDER -->
 <div class="hero-slider">
-
-    <!-- SLIDER IMAGES -->
     <img src="images/school1.png" class="slide active">
     <img src="images/school2.jpeg" class="slide">
     <img src="images/school3.jpeg" class="slide">
 
-    <!-- TEXT & NOTICE -->
     <div class="hero-content">
-
         <!-- LEFT TEXT -->
         <div class="hero-box">
             <h2>Welcome</h2>
             <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
         </div>
 
-        <!-- RIGHT NOTICE BOARD -->
+        <!-- RIGHT NOTICE -->
         <div class="notice-box">
             <h3>📢 Notice Board</h3>
             <ul>
@@ -55,122 +50,59 @@
                 <li>Class 11 Registration Ongoing</li>
             </ul>
         </div>
-
     </div>
 </div>
 
-<!-- ================= HOME SECTION ================= -->
-<section id="homeSection">
-    <div class="notice">
-        <h3>📢 Notice Board</h3>
-        <ul>
-            <li>Class 9 Admission Open</li>
-            <li>Class 11 Registration Ongoing</li>
-        </ul>
-    </div>
+<!-- SECTIONS -->
+<section id="home" class="section active"></section>
+
+<section id="about" class="section">
+    <h2>🏫 About School</h2>
+    <p>कक्षा 9 से 12 तक सरकारी शिक्षा संस्थान</p>
 </section>
 
-<!-- ================= ABOUT SECTION ================= -->
-<section id="aboutSection" style="display:none;">
-    <div style="padding:30px; max-width:1000px; margin:auto;">
-        <h2>🏫 General Information</h2>
-        <ul>
-            <li><b>School Type:</b> Government</li>
-            <li><b>Board:</b> BSEB</li>
-            <li><b>Classes:</b> 9 to 12</li>
-            <li><b>District:</b> Nalanda</li>
-        </ul>
-    </div>
+<section id="ict" class="section">
+    <h2>💻 ICT Lab</h2>
+    <p>विद्यालय में कंप्यूटर एवं ICT सुविधा उपलब्ध है।</p>
 </section>
 
-<!-- ================= ICT SECTION ================= -->
-<section id="ictSection" style="display:none;">
-    <div style="padding:30px;">
-        <h2>💻 ICT Lab</h2>
-        <p>विद्यालय में ICT एवं कंप्यूटर सुविधा उपलब्ध है।</p>
-    </div>
+<section id="videos" class="section">
+    <h2>🎥 Videos</h2>
+    <p>विद्यालय के कार्यक्रमों के वीडियो यहाँ होंगे।</p>
 </section>
 
-<!-- ================= VIDEOS SECTION ================= -->
-<section id="videoSection" style="display:none;">
-    <div style="padding:30px;">
-        <h2>🎥 Videos</h2>
-        <p>विद्यालय से संबंधित वीडियो यहाँ उपलब्ध होंगे।</p>
-    </div>
+<section id="feedback" class="section">
+    <h2>📝 Feedback</h2>
+    <input placeholder="Name"><br><br>
+    <input placeholder="Email"><br><br>
+    <textarea placeholder="Message"></textarea><br><br>
+    <button>Submit</button>
 </section>
 
-<!-- ================= FEEDBACK SECTION ================= -->
-<section id="feedbackSection" style="display:none;">
-    <div style="padding:30px; max-width:600px;">
-        <h2>📝 Feedback / Enquiry</h2>
-        <input type="text" placeholder="Your Name"><br><br>
-        <input type="email" placeholder="Your Email"><br><br>
-        <textarea placeholder="Your Message"></textarea><br><br>
-        <button>Submit</button>
-    </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
 <footer>
-    © 2025–26 Bapu +2 High School, Chandi (Nalanda)
+© 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- JS -->
 <script>
-function resetMenu() {
-    document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
+function showSection(id){
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
 
-    document.getElementById("aboutSection").style.display = "none";
-    document.getElementById("ictSection").style.display = "none";
-    document.getElementById("videoSection").style.display = "none";
-    document.getElementById("feedbackSection").style.display = "none";
-
-    document.getElementById("homeText").style.display = "none";
-    document.getElementById("aboutText").style.display = "none";
-}
-
-function showHome(el) {
-    resetMenu();
-    document.getElementById("homeText").style.display = "block";
-    el.classList.add("active");
-}
-
-function showAbout(el) {
-    resetMenu();
-    document.getElementById("aboutText").style.display = "block";
-    document.getElementById("aboutSection").style.display = "block";
-    el.classList.add("active");
-}
-
-function showICT(el) {
-    resetMenu();
-    document.getElementById("ictSection").style.display = "block";
-    el.classList.add("active");
-}
-
-function showVideos(el) {
-    resetMenu();
-    document.getElementById("videoSection").style.display = "block";
-    el.classList.add("active");
-}
-
-function showFeedback(el) {
-    resetMenu();
-    document.getElementById("feedbackSection").style.display = "block";
-    el.classList.add("active");
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
 }
 
 /* SLIDER */
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
+let i = 0;
+const slides = document.querySelectorAll('.slide');
 
-setInterval(() => {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-}, 3000);
+setInterval(()=>{
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+},3000);
 </script>
-
 
 </body>
 </html>
