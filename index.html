@@ -2,195 +2,213 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
+<title>Bapu +2 High School, Chandi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bapu +2 High School, Chandi (Nalanda)</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+/* ===== BASIC ===== */
+body{margin:0;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;cursor:pointer}
 
 /* ===== HEADER ===== */
-header {
-  background: #0d47a1;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
+.header{
+  background:#0d47a1;
+  color:#fff;
+  padding:15px 20px;
 }
-
-header img {
-  height: 60px;
-  margin-right: 15px;
+.header-inner{
+  display:flex;
+  align-items:center;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 22px;
+.logo{
+  height:70px;
+  margin-right:15px;
 }
+.school-text h1{margin:0;font-size:24px}
+.school-text p{margin:4px 0 0}
 
 /* ===== MENU ===== */
-nav {
-  background: #1565c0;
-  text-align: center;
+.menu{
+  background:#1565c0;
+  text-align:center;
+}
+.menu a{
+  color:#fff;
+  padding:12px 20px;
+  display:inline-block;
+}
+.menu a.active,
+.menu a:hover{
+  background:#0d47a1;
+  border-radius:6px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 12px 18px;
-  display: inline-block;
-  font-weight: bold;
+/* ===== SLIDER ===== */
+.hero-slider{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+}
+.hero-slider .slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+.hero-slider .slide.active{opacity:1}
+
+/* ===== HERO BOX ===== */
+.hero-box{
+  position:absolute;
+  left:40px;
+  bottom:40px;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  padding:20px;
+  border-radius:10px;
+  width:320px;
+}
+.notice-box{
+  position:absolute;
+  right:40px;
+  bottom:40px;
+  background:#fff;
+  padding:20px;
+  width:300px;
+  border-radius:10px;
 }
 
-nav a:hover {
-  background: #0d47a1;
-  border-radius: 6px;
+/* ===== SECTIONS ===== */
+section{
+  padding:40px 20px;
+  display:none;
 }
-
-/* ===== HOME SECTION ===== */
-#homeSection {
-  position: relative;
-}
-
-.hero {
-  background: url("school.jpg") center/cover no-repeat;
-  height: 420px;
-}
-
-/* welcome box */
-.welcome-box {
-  position: absolute;
-  left: 40px;
-  top: 120px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-}
-
-/* notice box */
-.notice-box {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
-  background: rgba(255,255,255,0.95);
-  padding: 15px;
-  width: 280px;
-  border-radius: 10px;
-}
-
-/* ===== ABOUT SECTION ===== */
-.about-school {
-  padding: 50px 20px;
-  background: #f7f9fc;
-  text-align: center;
-}
-
-.about-school h2 {
-  color: #0d47a1;
-  margin-bottom: 15px;
-}
-
-.about-school p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.about-school ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.about-school ul li {
-  margin: 8px 0;
-  font-size: 15px;
-}
+section h2{color:#0d47a1}
 
 /* ===== FOOTER ===== */
-footer {
-  background: #0d47a1;
-  color: white;
-  text-align: center;
-  padding: 10px;
+footer{
+  background:#0d47a1;
+  color:#fff;
+  text-align:center;
+  padding:10px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="School Logo">
-  <div>
-    <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
-    <small>Bapu +2 High School, Chandi (Nalanda)</small>
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="header-inner">
+    <img src="images/logo.png" class="logo" alt="School Logo">
+    <div class="school-text">
+      <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
+      <p>Bapu +2 High School, Chandi (Nalanda)</p>
+    </div>
   </div>
-</header>
+</div>
 
-<nav>
-  <a href="#" onclick="showHome()">Home</a>
-  <a href="#" onclick="showAbout()">About</a>
-  <a href="#">ICT</a>
-  <a href="#">Videos</a>
-  <a href="#">Feedback</a>
-</nav>
+<!-- ===== MENU ===== -->
+<div class="menu">
+  <a class="active" onclick="showHome(this)">Home</a>
+  <a onclick="showSection('about',this)">About</a>
+  <a onclick="showSection('ict',this)">ICT</a>
+  <a onclick="showSection('videos',this)">Videos</a>
+  <a onclick="showSection('feedback',this)">Feedback</a>
+</div>
 
 <!-- ===== HOME ===== -->
-<div id="homeSection">
-  <div class="hero"></div>
+<section id="home" style="display:block;">
+  <div class="hero-slider">
+    <img src="images/school1.png" class="slide active">
+    <img src="images/school2.jpeg" class="slide">
+    <img src="images/school3.jpeg" class="slide">
 
-  <div class="welcome-box">
-    <h2>Welcome</h2>
-    <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
+    <div class="hero-box">
+      <h2>Welcome</h2>
+      <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
+    </div>
+
+    <div class="notice-box">
+      <h3>📢 Notice Board</h3>
+      <ul>
+        <li>Class 9 Admission Open</li>
+        <li>Class 11 Registration Ongoing</li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <div class="notice-box">
-    <h3>📌 Notice Board</h3>
-    <ul>
-      <li>Class 9 Admission Open</li>
-      <li>Class 11 Registration Ongoing</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== ABOUT (HIDDEN) ===== -->
-<div id="aboutSection" style="display:none;" class="about-school">
+<!-- ===== ABOUT ===== -->
+<section id="about">
   <h2>🏫 About Our School</h2>
-
   <p>
-    बापू +2 उच्च विद्यालय, चंडी (नालंदा) एक प्रतिष्ठित सरकारी शैक्षणिक संस्थान है,
-    जो कक्षा 9 से 12 तक की शिक्षा प्रदान करता है। विद्यालय में अनुभवी शिक्षक,
-    ICT सुविधा एवं अनुशासित वातावरण उपलब्ध है।
+    बापू +2 उच्च विद्यालय, चंडी (नालंदा) एक प्रतिष्ठित सरकारी
+    शैक्षणिक संस्थान है जो कक्षा 9 से 12 तक शिक्षा प्रदान करता है।
   </p>
-
   <ul>
-    <li>📘 स्थापना : सरकारी विद्यालय</li>
-    <li>🎓 कक्षाएँ : 9वीं से 12वीं</li>
-    <li>💻 सुविधा : ICT Lab, Smart Class</li>
-    <li>📍 स्थान : चंडी, नालंदा (बिहार)</li>
+    <li>📚 कक्षाएँ: 9वीं से 12वीं</li>
+    <li>💻 सुविधा: ICT Lab, Smart Class</li>
+    <li>📍 स्थान: चंडी, नालंदा (बिहार)</li>
   </ul>
-</div>
+</section>
+
+<!-- ===== ICT ===== -->
+<section id="ict">
+  <h2>💻 ICT Lab</h2>
+  <p>विद्यालय में आधुनिक कंप्यूटर एवं ICT सुविधा उपलब्ध है।</p>
+</section>
+
+<!-- ===== VIDEOS ===== -->
+<section id="videos">
+  <h2>🎥 Videos</h2>
+  <p>विद्यालय से संबंधित वीडियो यहाँ प्रदर्शित किए जाएंगे।</p>
+</section>
+
+<!-- ===== FEEDBACK ===== -->
+<section id="feedback">
+  <h2>📝 Feedback</h2>
+  <input type="text" placeholder="Your Name"><br><br>
+  <input type="email" placeholder="Your Email"><br><br>
+  <textarea placeholder="Your Message"></textarea><br><br>
+  <button>Submit</button>
+</section>
 
 <footer>
-  © 2025–26 Bapu +2 High School, Chandi (Nalanda)
+© 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
-<!-- ===== SCRIPT ===== -->
+<!-- ===== JAVASCRIPT ===== -->
 <script>
-function showHome() {
-  document.getElementById("homeSection").style.display = "block";
-  document.getElementById("aboutSection").style.display = "none";
+/* MENU */
+function showHome(el){
+  hideAll();
+  document.getElementById("home").style.display="block";
+  setActive(el);
+}
+function showSection(id,el){
+  hideAll();
+  document.getElementById(id).style.display="block";
+  setActive(el);
+}
+function hideAll(){
+  document.querySelectorAll("section").forEach(s=>s.style.display="none");
+}
+function setActive(el){
+  document.querySelectorAll(".menu a").forEach(a=>a.classList.remove("active"));
+  el.classList.add("active");
 }
 
-function showAbout() {
-  document.getElementById("homeSection").style.display = "none";
-  document.getElementById("aboutSection").style.display = "block";
-}
+/* SLIDER */
+let slides=document.querySelectorAll(".slide");
+let current=0;
+setInterval(()=>{
+  slides[current].classList.remove("active");
+  current=(current+1)%slides.length;
+  slides[current].classList.add("active");
+},3000);
 </script>
 
 </body>
