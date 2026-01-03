@@ -4,168 +4,112 @@
     <meta charset="UTF-8">
     <title>Bapu +2 High School, Chandi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS FILE -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Basic safety CSS (if style.css fails) */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        section {
-            padding: 20px;
-        }
-        #ictSection,
-        #videoSection,
-        #feedbackSection {
-            display: none;
-        }
-    </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <div class="header">
-    <div class="header-inner">
-        <img src="images/logo.png" class="logo" alt="School Logo">
-
-        <div class="school-text">
-            <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
-            <p>Bapu +2 High School, Chandi (Nalanda)</p>
-        </div>
-    </div>
+    <img src="images/logo.png" class="logo" alt="School Logo">
+    <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
+    <p>Bapu +2 High School, Chandi (Nalanda)</p>
 </div>
 
-
-<!-- MENU / TABS -->
+<!-- ================= MENU ================= -->
 <div class="menu">
- <div class="menu">
-    <a href="javascript:void(0)" onclick="showHome(this)" class="active">Home</a>
-     <a onclick="showAbout(this)">About School</a>
-    <a href="javascript:void(0)" onclick="showICT(this)">ICT</a>
-    <a href="javascript:void(0)" onclick="showVideos(this)">Videos</a>
-    <a href="javascript:void(0)" onclick="showFeedback(this)">Feedback</a>
+    <a onclick="showHome(this)" class="active">Home</a>
+    <a onclick="showAbout(this)">About</a>
+    <a onclick="showICT(this)">ICT</a>
+    <a onclick="showVideos(this)">Videos</a>
+    <a onclick="showFeedback(this)">Feedback</a>
 </div>
 
-</div>
-
-<!-- HOME SECTION -->
-<section id="homeSection">
-    <div class="hero-slider">
-
-        <img class="slide active" src="images/school1.png">
-        <img class="slide" src="images/school2.jpeg">
-        <img class="slide" src="images/school3.jpeg">
-
-       <div class="hero-slider">
+<!-- ================= HERO SLIDER (COMMON BACKGROUND) ================= -->
+<div class="hero-slider">
 
     <img src="images/school1.png" class="slide active">
     <img src="images/school2.jpeg" class="slide">
     <img src="images/school3.jpeg" class="slide">
 
     <div class="hero-content">
+
+        <!-- HOME TEXT -->
         <div id="homeText" class="hero-box">
             <h2>Welcome</h2>
             <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
         </div>
 
+        <!-- ABOUT TEXT -->
         <div id="aboutText" class="hero-box" style="display:none;">
             <h2>About School</h2>
-            <p>कक्षा 9 से 12 तक सरकारी शिक्षा संस्थान</p>
+            <p>
+                यह एक सरकारी +2 विद्यालय है जो कक्षा 9 से 12 तक
+                गुणवत्तापूर्ण शिक्षा प्रदान करता है।
+            </p>
         </div>
-    </div>
 
+    </div>
 </div>
 
-        </div>
-
+<!-- ================= HOME SECTION ================= -->
+<section id="homeSection">
+    <div class="notice">
+        <h3>📢 Notice Board</h3>
+        <ul>
+            <li>Class 9 Admission Open</li>
+            <li>Class 11 Registration Ongoing</li>
+        </ul>
     </div>
 </section>
 
-<section id="aboutSection">
+<!-- ================= ABOUT SECTION ================= -->
+<section id="aboutSection" style="display:none;">
     <div style="padding:30px; max-width:1000px; margin:auto;">
-
-        <h2>🏫 About School</h2>
-        <p>
-            बापू +2 उच्च विद्यालय, चंडी (नालंदा) एक सरकारी शिक्षण संस्थान है
-            जो माध्यमिक एवं उच्च माध्यमिक स्तर की गुणवत्तापूर्ण शिक्षा प्रदान करता है।
-        </p>
-
-        <hr>
-
-        <h3>📌 General Information</h3>
+        <h2>🏫 General Information</h2>
         <ul>
-            <li><b>School Name:</b> Bapu +2 High School, Chandi</li>
-            <li><b>District:</b> Nalanda</li>
-            <li><b>State:</b> Bihar</li>
+            <li><b>School Type:</b> Government</li>
             <li><b>Board:</b> BSEB</li>
-            <li><b>Medium:</b> Hindi / English</li>
-            <li><b>Type:</b> Government</li>
+            <li><b>Classes:</b> 9 to 12</li>
+            <li><b>District:</b> Nalanda</li>
         </ul>
-
-        <hr>
-
-        <h3>🎓 Academic Details</h3>
-        <ul>
-            <li>Class 9 to 12</li>
-            <li>Science & Arts Stream</li>
-        </ul>
-
-        <hr>
-
-        <h3>🏢 Infrastructure</h3>
-        <ul>
-            <li>Permanent Building</li>
-            <li>ICT / Computer Lab</li>
-            <li>Library</li>
-            <li>Drinking Water</li>
-        </ul>
-
-        <hr>
-
-        <h3>📍 Contact</h3>
-        <p>Chandi, Nalanda, Bihar</p>
-
     </div>
 </section>
 
-<!-- ICT SECTION -->
-<section id="ictSection">
-    <h2>💻 ICT Facilities</h2>
-    <p>
-        हमारे विद्यालय में स्मार्ट क्लास, कंप्यूटर लैब एवं डिजिटल शिक्षा की सुविधा उपलब्ध है।
-    </p>
+<!-- ================= ICT SECTION ================= -->
+<section id="ictSection" style="display:none;">
+    <div style="padding:30px;">
+        <h2>💻 ICT Lab</h2>
+        <p>विद्यालय में ICT एवं कंप्यूटर सुविधा उपलब्ध है।</p>
+    </div>
 </section>
 
-<!-- VIDEOS SECTION -->
-<section id="videoSection">
-    <h2>🎥 School Videos</h2>
-    <p>
-        विद्यालय के कार्यक्रमों एवं शैक्षणिक वीडियो यहाँ उपलब्ध होंगे।
-    </p>
+<!-- ================= VIDEOS SECTION ================= -->
+<section id="videoSection" style="display:none;">
+    <div style="padding:30px;">
+        <h2>🎥 Videos</h2>
+        <p>विद्यालय से संबंधित वीडियो यहाँ उपलब्ध होंगे।</p>
+    </div>
 </section>
 
-<!-- FEEDBACK SECTION -->
-<section id="feedbackSection">
-    <h2>📝 Feedback / Enquiry</h2>
-
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <br><br>
-    <button>Submit</button>
+<!-- ================= FEEDBACK SECTION ================= -->
+<section id="feedbackSection" style="display:none;">
+    <div style="padding:30px; max-width:600px;">
+        <h2>📝 Feedback / Enquiry</h2>
+        <input type="text" placeholder="Your Name"><br><br>
+        <input type="email" placeholder="Your Email"><br><br>
+        <textarea placeholder="Your Message"></textarea><br><br>
+        <button>Submit</button>
+    </div>
 </section>
-    
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 <footer>
     © 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
-<!-- 👇 YAHAN ADD KARNA HAI -->
+<!-- ================= JAVASCRIPT ================= -->
 <script>
+/* ----- TAB CONTROL ----- */
 function hideAll() {
     document.getElementById("homeSection").style.display = "none";
     document.getElementById("aboutSection").style.display = "none";
@@ -173,18 +117,23 @@ function hideAll() {
     document.getElementById("videoSection").style.display = "none";
     document.getElementById("feedbackSection").style.display = "none";
 
+    document.getElementById("homeText").style.display = "none";
+    document.getElementById("aboutText").style.display = "none";
+
     document.querySelectorAll(".menu a").forEach(a => a.classList.remove("active"));
 }
 
 function showHome(el) {
     hideAll();
     document.getElementById("homeSection").style.display = "block";
+    document.getElementById("homeText").style.display = "block";
     el.classList.add("active");
 }
 
 function showAbout(el) {
     hideAll();
     document.getElementById("aboutSection").style.display = "block";
+    document.getElementById("aboutText").style.display = "block";
     el.classList.add("active");
 }
 
@@ -205,5 +154,17 @@ function showFeedback(el) {
     document.getElementById("feedbackSection").style.display = "block";
     el.classList.add("active");
 }
+
+/* ----- IMAGE SLIDER ----- */
+let currentSlide = 0;
+const slides = document.querySelectorAll(".hero-slider .slide");
+
+setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+}, 4000);
 </script>
 
+</body>
+</html>
