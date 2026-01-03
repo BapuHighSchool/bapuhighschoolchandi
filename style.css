@@ -216,3 +216,31 @@ body {
     display: block;
 }
 
+.about-school {
+  padding: 50px 20px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.about-school h2 {
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.about-school p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-school ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.about-school ul li {
+  margin: 8px 0;
+  font-size: 15px;
+}
