@@ -7,12 +7,6 @@
 
 <style>
 /* ===== BASIC ===== */
-  <head>
-  <meta charset="UTF-8">
-
-</head>
-
-  
 body{margin:0;font-family:Arial,Helvetica,sans-serif}
 a{text-decoration:none;cursor:pointer}
 
@@ -55,7 +49,7 @@ a{text-decoration:none;cursor:pointer}
   height:420px;
   overflow:hidden;
 }
-.hero-slider .slide{
+.hero-slider img{
   position:absolute;
   width:100%;
   height:100%;
@@ -63,9 +57,9 @@ a{text-decoration:none;cursor:pointer}
   opacity:0;
   transition:opacity 1s ease-in-out;
 }
-.hero-slider .slide.active{opacity:1}
+.hero-slider img.active{opacity:1}
 
-/* ===== HERO BOX ===== */
+/* ===== HERO CONTENT ===== */
 .hero-box{
   position:absolute;
   left:40px;
@@ -87,11 +81,31 @@ a{text-decoration:none;cursor:pointer}
 }
 
 /* ===== SECTIONS ===== */
-section{
-  padding:40px 20px;
+.page-section{
   display:none;
+  padding:40px 20px;
 }
-section h2{color:#0d47a1}
+.page-section h2{color:#0d47a1}
+
+/* ===== ICT ===== */
+.ict-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.ict-card{
+  background:#f5f7fa;
+  padding:20px;
+  border-radius:10px;
+}
+.ict-images{
+  margin-top:20px;
+}
+.ict-images img{
+  width:45%;
+  margin:10px;
+  border-radius:8px;
+}
 
 /* ===== FOOTER ===== */
 footer{
@@ -108,7 +122,7 @@ footer{
 <!-- ===== HEADER ===== -->
 <div class="header">
   <div class="header-inner">
-    <img src="images/logo.png" class="logo" alt="School Logo">
+    <img src="images/logo.png" class="logo">
     <div class="school-text">
       <h1>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</h1>
       <p>Bapu +2 High School, Chandi (Nalanda)</p>
@@ -118,7 +132,7 @@ footer{
 
 <!-- ===== MENU ===== -->
 <div class="menu">
-  <a class="active" onclick="showHome(this)">Home</a>
+  <a class="active" onclick="showSection('home',this)">Home</a>
   <a onclick="showSection('about',this)">About</a>
   <a onclick="showSection('ict',this)">ICT</a>
   <a onclick="showSection('videos',this)">Videos</a>
@@ -126,14 +140,14 @@ footer{
 </div>
 
 <!-- ===== HOME ===== -->
-<section id="home" style="display:block;">
+<div id="home" class="page-section" style="display:block">
   <div class="hero-slider">
-    <img src="images/school1.png" class="slide active">
-    <img src="images/school2.jpeg" class="slide">
-    <img src="images/school3.jpeg" class="slide">
+    <img src="images/school1.png" class="active">
+    <img src="images/school2.jpeg">
+    <img src="images/school3.jpeg">
 
     <div class="hero-box">
-      <h2>Welcome</h2>
+      <h2>🙏 Welcome</h2>
       <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
     </div>
 
@@ -145,156 +159,75 @@ footer{
       </ul>
     </div>
   </div>
-</section>
-
-<!-- ABOUT SECTION START -->
-<section class="about-school" id="about">
-
-  <h2>🏫 About Our School</h2>
-
-  <p>
-    बापू +2 उच्च विद्यालय, चंडी (नालंदा) एक प्रतिष्ठित सरकारी शैक्षणिक संस्थान है,
-    जो कक्षा 9 से 12 तक की शिक्षा प्रदान करता है।
-  </p>
-
-  <h3>📌 General Administration</h3>
-  <ul>
-    <li><strong>UDISE Code:</strong> 10270501606</li>
-    <li><strong>Establishment Year:</strong> 1948</li>
-    <li><strong>Management:</strong> Department of Education, Bihar</li>
-    <li><strong>School Type:</strong> Co-educational</li>
-    <li><strong>Medium:</strong> Hindi</li>
-  </ul>
-
-  <h3>📘 Academic Profile</h3>
-  <ul>
-    <li><strong>Classes:</strong> Grade 9 to Grade 12</li>
-    <li><strong>Teachers:</strong> 24 (14 Male, 10 Female)</li>
-    <li><strong>Library:</strong> 1300+ Books</li>
-  </ul>
-
-  <h3>🏗️ Infrastructure & Facilities</h3>
-  <ul>
-    <li>Pucca Government Building</li>
-    <li>Separate Toilets for Boys & Girls</li>
-    <li>Drinking Water Facility</li>
-    <li>Electricity Connection</li>
-    <li>Playground Available</li>
-  </ul>
-
-  <h3>📍 Contact & Location</h3>
-  <ul>
-    <li>Chandi Block, Nalanda, Bihar – 803108</li>
-    <li>DIGIPIN: 23P-76L-287J</li>
-    <li>Official Facebook Page</li>
-  </ul>
-
-<!-- ICT SECTION -->
-<div id="ict" class="page-section" style="display:none;">
-
-  <h2 class="section-title">💻 ICT @ Our School</h2>
-
-  <p class="section-intro">
-    बापू +2 उच्च विद्यालय, चंडी (नालंदा) में छात्रों को आधुनिक
-    सूचना एवं संचार प्रौद्योगिकी (ICT) के माध्यम से गुणवत्तापूर्ण
-    शिक्षा प्रदान की जाती है।
-  </p>
-
-  <div class="ict-grid">
-
-    <div class="ict-card">
-      <h3>🖥️ ICT Laboratory</h3>
-      <p>
-        विद्यालय में सुव्यवस्थित ICT लैब उपलब्ध है जिसमें
-        कंप्यूटर, प्रोजेक्टर एवं आवश्यक सॉफ्टवेयर स्थापित हैं।
-      </p>
-    </div>
-
-    <div class="ict-card">
-      <h3>📽️ Smart Class</h3>
-      <p>
-        स्मार्ट क्लास के माध्यम से डिजिटल कंटेंट,
-        वीडियो लेक्चर एवं PPT द्वारा पढ़ाई कराई जाती है।
-      </p>
-    </div>
-
-    <div class="ict-card">
-      <h3>🌐 Digital Learning</h3>
-      <p>
-        छात्रों को ऑनलाइन शैक्षणिक संसाधनों,
-        ई-कंटेंट एवं डिजिटल प्लेटफॉर्म से जोड़ा जाता है।
-      </p>
-    </div>
-
-    <div class="ict-card">
-      <h3>👨‍🏫 Trained Teachers</h3>
-      <p>
-        प्रशिक्षित शिक्षक ICT टूल्स का प्रयोग कर
-        रोचक एवं प्रभावी शिक्षण सुनिश्चित करते हैं।
-      </p>
-    </div>
-
-  </div>
-
-  <!-- ICT IMAGES -->
-  <h3 class="sub-title">📸 ICT Lab Activities</h3>
-
-  <div class="ict-images">
-    <img src="images/ict1.jpg" alt="ICT Lab Students Working">
-    <img src="images/ict2.jpg" alt="ICT Computer Lab View">
-  </div>
-
 </div>
 
+<!-- ===== ABOUT ===== -->
+<div id="about" class="page-section">
+  <h2>🏫 About Our School</h2>
+  <ul>
+    <li><b>UDISE:</b> 10270501606</li>
+    <li><b>Established:</b> 1948</li>
+    <li><b>Management:</b> Govt. of Bihar</li>
+    <li><b>Classes:</b> 9–12</li>
+    <li><b>Teachers:</b> 24</li>
+  </ul>
+</div>
+
+<!-- ===== ICT ===== -->
+<div id="ict" class="page-section">
+  <h2>💻 ICT @ Our School</h2>
+
+  <div class="ict-grid">
+    <div class="ict-card">🖥️ ICT Lab with Computers</div>
+    <div class="ict-card">📽️ Smart Class Facility</div>
+    <div class="ict-card">🌐 Digital Learning</div>
+    <div class="ict-card">👨‍🏫 Trained Teachers</div>
+  </div>
+
+  <div class="ict-images">
+    <img src="images/ict1.jpg">
+    <img src="images/ict2.jpg">
+  </div>
+</div>
 
 <!-- ===== VIDEOS ===== -->
-<section id="videos">
+<div id="videos" class="page-section">
   <h2>🎥 Videos</h2>
-  <p>विद्यालय से संबंधित वीडियो यहाँ प्रदर्शित किए जाएंगे।</p>
-</section>
+  <p>School related videos will be shown here.</p>
+</div>
 
 <!-- ===== FEEDBACK ===== -->
-<section id="feedback">
+<div id="feedback" class="page-section">
   <h2>📝 Feedback</h2>
   <input type="text" placeholder="Your Name"><br><br>
   <input type="email" placeholder="Your Email"><br><br>
   <textarea placeholder="Your Message"></textarea><br><br>
   <button>Submit</button>
-</section>
+</div>
 
 <footer>
 © 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
 <script>
-function showSection(sectionId, el) {
+/* MENU SWITCH */
+function showSection(id, el){
+  document.querySelectorAll('.page-section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
 
-  // hide all sections
-  const sections = document.querySelectorAll('.page-section');
-  sections.forEach(sec => sec.style.display = 'none');
-
-  // show selected section
-  const activeSection = document.getElementById(sectionId);
-  if (activeSection) {
-    activeSection.style.display = 'block';
-  }
-
-  // menu active class
-  const menuLinks = document.querySelectorAll('.menu a');
-  menuLinks.forEach(link => link.classList.remove('active'));
-
-  if (el) {
-    el.classList.add('active');
-  }
+  document.querySelectorAll('.menu a').forEach(a=>a.classList.remove('active'));
+  el.classList.add('active');
 }
 
-// HOME default load
-window.onload = function () {
-  const home = document.getElementById('home');
-  if (home) home.style.display = 'block';
-};
+/* SLIDER */
+let slides=document.querySelectorAll('.hero-slider img');
+let i=0;
+setInterval(()=>{
+  slides[i].classList.remove('active');
+  i=(i+1)%slides.length;
+  slides[i].classList.add('active');
+},4000);
 </script>
-
 
 </body>
 </html>
