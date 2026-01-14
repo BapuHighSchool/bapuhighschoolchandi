@@ -244,3 +244,24 @@ body {
   margin: 8px 0;
   font-size: 15px;
 }
+.sub-title {
+  text-align: center;
+  margin-top: 30px;
+  color: #2c3e50;
+}
+
+.ict-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.ict-images img {
+  width: 420px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
