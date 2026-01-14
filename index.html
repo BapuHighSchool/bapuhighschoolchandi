@@ -266,36 +266,35 @@ footer{
 © 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
-<!-- ===== JAVASCRIPT ===== -->
 <script>
-/* MENU */
-function showHome(el){
-  hideAll();
-  document.getElementById("home").style.display="block";
-  setActive(el);
-}
-function showSection(id,el){
-  hideAll();
-  document.getElementById(id).style.display="block";
-  setActive(el);
-}
-function hideAll(){
-  document.querySelectorAll("section").forEach(s=>s.style.display="none");
-}
-function setActive(el){
-  document.querySelectorAll(".menu a").forEach(a=>a.classList.remove("active"));
-  el.classList.add("active");
+function showSection(sectionId, el) {
+
+  // hide all sections
+  const sections = document.querySelectorAll('.page-section');
+  sections.forEach(sec => sec.style.display = 'none');
+
+  // show selected section
+  const activeSection = document.getElementById(sectionId);
+  if (activeSection) {
+    activeSection.style.display = 'block';
+  }
+
+  // menu active class
+  const menuLinks = document.querySelectorAll('.menu a');
+  menuLinks.forEach(link => link.classList.remove('active'));
+
+  if (el) {
+    el.classList.add('active');
+  }
 }
 
-/* SLIDER */
-let slides=document.querySelectorAll(".slide");
-let current=0;
-setInterval(()=>{
-  slides[current].classList.remove("active");
-  current=(current+1)%slides.length;
-  slides[current].classList.add("active");
-},3000);
+// HOME default load
+window.onload = function () {
+  const home = document.getElementById('home');
+  if (home) home.style.display = 'block';
+};
 </script>
+
 
 </body>
 </html>
