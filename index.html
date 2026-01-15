@@ -193,9 +193,21 @@ footer{
 
 <!-- ===== VIDEOS ===== -->
 <div id="videos" class="page-section">
-  <h2>🎥 Videos</h2>
-  <p>School related videos will be shown here.</p>
+
+  <h2>🎥 School Video Gallery</h2>
+
+  <p>नीचे दिए गए Browse बटन से वीडियो चुनें और तुरंत देखें।</p>
+
+  <input type="file" accept="video/*" onchange="loadVideo(event)">
+
+  <br><br>
+
+  <video id="videoPlayer" width="100%" height="380" controls style="display:none; border-radius:10px;">
+    Your browser does not support video.
+  </video>
+
 </div>
+
 
 <!-- ===== FEEDBACK ===== -->
 <div id="feedback" class="page-section">
@@ -205,6 +217,18 @@ footer{
   <textarea placeholder="Your Message"></textarea><br><br>
   <button>Submit</button>
 </div>
+<script>
+function loadVideo(event){
+  const video = document.getElementById('videoPlayer');
+  const file = event.target.files[0];
+
+  if(file){
+    video.src = URL.createObjectURL(file);
+    video.style.display = 'block';
+    video.play();
+  }
+}
+</script>
 
 <footer>
 © 2025–26 Bapu +2 High School, Chandi (Nalanda)
