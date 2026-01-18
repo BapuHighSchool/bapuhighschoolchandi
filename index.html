@@ -239,6 +239,16 @@ function loadVideo(event){
     video.play();
   }
 }
+  <!-- ===== MOVING NOTICE STRIP ===== -->
+<div class="notice-marquee">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    📢 Class 9 Admission Open | 
+    📝 Class 11 Registration Ongoing | 
+    💻 ICT Lab Functional | 
+    🎥 School Activities Updated Regularly
+  </marquee>
+</div>
+
 </script>
 
 <footer>
@@ -263,6 +273,16 @@ setInterval(()=>{
   i=(i+1)%slides.length;
   slides[i].classList.add('active');
 },4000);
+  .notice-marquee{
+  background:#ffeb3b;
+  color:#000;
+  font-weight:bold;
+  padding:10px 0;
+  font-size:16px;
+  border-top:2px solid #0d47a1;
+  border-bottom:2px solid #0d47a1;
+}
+
 </script>
 
 </body>
