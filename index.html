@@ -53,11 +53,12 @@ a{
 }
 
 /* ===== SLIDER ===== */
+/* ===== SLIDER ===== */
 .hero-slider{
   position:relative;
-  width:100%;
-  height:calc(100vh - 220px); 
+  height:420px;
   overflow:hidden;
+  margin-top:0;   /* ✅ yahin add */
 }
 
 .hero-slider img{
@@ -133,7 +134,11 @@ footer{
   font-size:16px;
   border-top:2px solid #0d47a1;
   border-bottom:2px solid #0d47a1;
+
+  margin:0;          /* 🔥 gap remove */
+  line-height:1.2;
 }
+
   .principal-box{
   position:absolute;
   right:40px;
