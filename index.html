@@ -194,6 +194,29 @@ footer{
   padding-top:0 !important;
   display:block;
 }
+  /* REMOVE ALL SPACE BETWEEN MARQUEE & SLIDER */
+.notice-marquee{
+  margin-bottom:0 !important;
+  padding-bottom:10px;
+}
+
+.hero-slider{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  display:block;
+}
+
+/* agar kisi wrapper div se gap aa raha ho */
+.hero-slider::before{
+  display:none !important;
+}
+
+/* force body & section fix */
+body, html{
+  margin:0;
+  padding:0;
+}
+
 </style>
 </head>
 
