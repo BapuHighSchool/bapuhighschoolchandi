@@ -6,17 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== BASIC ===== */
-body{
+/* ===== RESET ===== */
+*{
   margin:0;
   padding:0;
-  font-family:Arial, Helvetica, sans-serif;
-  overflow-x:hidden;
+  box-sizing:border-box;
 }
 
-a{
-  text-decoration:none;
-  cursor:pointer;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
 }
 
 /* ===== HEADER ===== */
@@ -25,42 +24,55 @@ a{
   color:#fff;
   padding:15px 20px;
 }
+
 .header-inner{
   display:flex;
   align-items:center;
 }
+
 .logo{
   height:70px;
   margin-right:15px;
 }
-.school-text h1{margin:0;font-size:24px}
-.school-text p{margin:4px 0 0}
+
+.school-text h1{font-size:24px;}
+.school-text p{margin-top:4px;}
 
 /* ===== MENU ===== */
 .menu{
   background:#1565c0;
   text-align:center;
 }
+
 .menu a{
   color:#fff;
   padding:12px 20px;
   display:inline-block;
+  cursor:pointer;
 }
-.menu a.active,
-.menu a:hover{
+
+.menu a:hover,
+.menu a.active{
   background:#0d47a1;
   border-radius:6px;
 }
+
+/* ===== NOTICE ===== */
+.notice-marquee{
+  background:#ffeb3b;
+  color:#000;
+  font-weight:bold;
+  font-size:16px;
+  padding:8px 0;
+  border-top:2px solid #0d47a1;
+  border-bottom:2px solid #0d47a1;
+}
+
 /* ===== SLIDER ===== */
 .hero-slider{
   position:relative;
   height:420px;
   overflow:hidden;
-  margin-top:0;   /*
-  .hero-slider{
-  margin-top:-40px !important;
-}
-✅ yahin add */
 }
 
 .hero-slider img{
@@ -71,27 +83,43 @@ a{
   opacity:0;
   transition:opacity 1s ease-in-out;
 }
-.hero-slider img.active{opacity:1}
 
-/* ===== HERO CONTENT ===== */
+.hero-slider img.active{
+  opacity:1;
+}
+
+/* ===== HERO BOX ===== */
 .hero-box{
   position:absolute;
   left:40px;
   bottom:40px;
-  background:rgba(0,0,0,.6);
+  background:rgba(0,0,0,0.6);
   color:#fff;
   padding:20px;
   border-radius:10px;
   width:320px;
 }
-.notice-box{
+
+/* ===== PRINCIPAL BOX ===== */
+.principal-box{
   position:absolute;
   right:40px;
   bottom:40px;
-  background:#fff;
+  background:#ffffff;
   padding:20px;
   width:300px;
-  border-radius:10px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.principal-box h3{
+  margin-bottom:10px;
+  color:#0d47a1;
+}
+
+.principal-box p{
+  font-size:14px;
+  line-height:1.6;
 }
 
 /* ===== SECTIONS ===== */
@@ -99,7 +127,11 @@ a{
   display:none;
   padding:40px 20px;
 }
-.page-section h2{color:#0d47a1}
+
+.page-section h2{
+  color:#0d47a1;
+  margin-bottom:15px;
+}
 
 /* ===== ICT ===== */
 .ict-grid{
@@ -107,14 +139,17 @@ a{
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
+
 .ict-card{
   background:#f5f7fa;
   padding:20px;
   border-radius:10px;
 }
+
 .ict-images{
   margin-top:20px;
 }
+
 .ict-images img{
   width:45%;
   margin:10px;
@@ -127,106 +162,28 @@ footer{
   color:#fff;
   text-align:center;
   padding:10px;
-}
-  .notice-marquee{
-  background:#ffeb3b;
-  color:#000;
-  font-weight:bold;
-  font-size:16px;
-
-  padding:8px 0;
-  margin:0;
-
-  border-top:2px solid #0d47a1;
-  border-bottom:2px solid #0d47a1;
-
-  line-height:1.2;
+  margin-top:30px;
 }
 
-}
-
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero-box,
   .principal-box{
-  position:absolute;
-  right:40px;
-  bottom:40px;
-  background:#ffffff;
-  padding:20px;
-  width:300px;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.2);
-}
+    position:static;
+    width:90%;
+    margin:15px auto;
+  }
 
-.principal-box h3{
-  margin-top:0;
-  color:#0d47a1;
+  .hero-slider{
+    height:auto;
+  }
 }
-
-.principal-box p{
-  font-size:14px;
-  line-height:1.6;
-}
-  .notice-marquee{
-  margin-bottom:0 !important;
-  padding-bottom:10px;
-}
-
-.hero-slider{
-  margin-top:0 !important;
-  padding-top:0 !important;
-}
-
-.hero-slider img{
-  display:block;
-}
-  /* FORCE REMOVE GAP */
-.notice-marquee{
-  margin-bottom:0 !important;
-  padding-bottom:10px !important;
-}
-
-.container,
-.wrapper,
-.section,
-.main,
-.content{
-  margin-top:0 !important;
-  padding-top:0 !important;
-}
-
-.hero-slider{
-  margin-top:-10px !important;
-  padding-top:0 !important;
-  display:block;
-}
-  /* REMOVE ALL SPACE BETWEEN MARQUEE & SLIDER */
-.notice-marquee{
-  margin-bottom:0 !important;
-  padding-bottom:10px;
-}
-
-.hero-slider{
-  margin-top:0 !important;
-  padding-top:0 !important;
-  display:block;
-}
-
-/* agar kisi wrapper div se gap aa raha ho */
-.hero-slider::before{
-  display:none !important;
-}
-
-/* force body & section fix */
-body, html{
-  margin:0;
-  padding:0;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <div class="header">
   <div class="header-inner">
     <img src="images/logo.png" class="logo">
@@ -237,26 +194,23 @@ body, html{
   </div>
 </div>
 
-<!-- ===== MENU ===== -->
+<!-- MENU -->
 <div class="menu">
   <a class="active" onclick="showSection('home',this)">Home</a>
   <a onclick="showSection('about',this)">About</a>
   <a onclick="showSection('ict',this)">ICT</a>
   <a onclick="showSection('videos',this)">Videos</a>
   <a onclick="showSection('feedback',this)">Feedback</a>
-  </div>
-   <!-- ===== MOVING NOTICE STRIP ===== -->
+</div>
+
+<!-- NOTICE -->
 <div class="notice-marquee">
-  <marquee behavior="scroll" direction="left" scrollamount="6" style="margin:0;padding:0;">
-    📢 Class 9 Admission Open |
-    📝 Class 11 Registration Ongoing |
-    💻 ICT Lab Functional |
-    🎥 School Activities Updated Regularly
+  <marquee scrollamount="6">
+    📢 Class 9 Admission Open | 📝 Class 11 Registration Ongoing | 💻 ICT Lab Functional | 🎥 Activities Updated
   </marquee>
 </div>
 
-
-<!-- ===== HOME ===== -->
+<!-- HOME -->
 <div id="home" class="page-section" style="display:block">
   <div class="hero-slider">
     <img src="images/school1.png" class="active">
@@ -268,22 +222,21 @@ body, html{
       <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा)</p>
     </div>
 
-   <div class="principal-box">
-  <h3>👨‍🏫 Principal’s Message</h3>
-  <p>
-    हमारे विद्यालय का उद्देश्य छात्रों को
-    गुणवत्तापूर्ण शिक्षा के साथ
-    नैतिक मूल्यों से युक्त बनाना है।
-    <br><br>
-    — प्राचार्य<br>
-    बापू +2 उच्च विद्यालय, चंडी
-  </p>
-</div>
-
+    <div class="principal-box">
+      <h3>👨‍🏫 Principal’s Message</h3>
+      <p>
+        हमारे विद्यालय का उद्देश्य छात्रों को
+        गुणवत्तापूर्ण शिक्षा के साथ
+        नैतिक मूल्यों से युक्त बनाना है।
+        <br><br>
+        — प्राचार्य<br>
+        बापू +2 उच्च विद्यालय, चंडी
+      </p>
+    </div>
   </div>
 </div>
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
 <div id="about" class="page-section">
   <h2>🏫 About Our School</h2>
   <ul>
@@ -295,7 +248,7 @@ body, html{
   </ul>
 </div>
 
-<!-- ===== ICT ===== -->
+<!-- ICT -->
 <div id="ict" class="page-section">
   <h2>💻 ICT @ Our School</h2>
 
@@ -306,38 +259,21 @@ body, html{
     <div class="ict-card">👨‍🏫 Trained Teachers</div>
   </div>
 
- <div class="ict-images">
-  <img src="images/ict1.jpeg" alt="ICT Lab">
-  <img src="images/ict2.jpeg" alt="Smart Class">
-</div>
-
-</div>
-
-<!-- ===== VIDEOS ===== -->
-<div id="videos" class="page-section">
-
-  <h2>🎥 School Activity Video</h2>
-
-  <p>बापू +2 उच्च विद्यालय, चंडी (नालंदा) से संबंधित वीडियो</p>
-
-  <div style="max-width:900px; margin:auto;">
-
-    <iframe
-      width="100%"
-      height="450"
-      src="https://www.youtube.com/embed/Q2jg8RwNLUE?start=1"
-      title="School Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="border-radius:12px;">
-    </iframe>
-
+  <div class="ict-images">
+    <img src="images/ict1.jpeg">
+    <img src="images/ict2.jpeg">
   </div>
+</div>
 
+<!-- VIDEOS -->
+<div id="videos" class="page-section">
+  <h2>🎥 School Activity Video</h2>
+  <div style="max-width:900px;margin:auto;">
+    <iframe width="100%" height="450" src="https://www.youtube.com/embed/Q2jg8RwNLUE" allowfullscreen style="border-radius:12px;"></iframe>
+  </div>
 </div>
-</div>
-<!-- ===== FEEDBACK ===== -->
+
+<!-- FEEDBACK -->
 <div id="feedback" class="page-section">
   <h2>📝 Feedback</h2>
   <input type="text" placeholder="Your Name"><br><br>
@@ -345,26 +281,12 @@ body, html{
   <textarea placeholder="Your Message"></textarea><br><br>
   <button>Submit</button>
 </div>
-<script>
-function loadVideo(event){
-  const video = document.getElementById('videoPlayer');
-  const file = event.target.files[0];
-
-  if(file){
-    video.src = URL.createObjectURL(file);
-    video.style.display = 'block';
-    video.play();
-  }
-}
- 
-</script>
 
 <footer>
 © 2025–26 Bapu +2 High School, Chandi (Nalanda)
 </footer>
 
 <script>
-/* MENU SWITCH */
 function showSection(id, el){
   document.querySelectorAll('.page-section').forEach(s=>s.style.display='none');
   document.getElementById(id).style.display='block';
@@ -373,7 +295,6 @@ function showSection(id, el){
   el.classList.add('active');
 }
 
-/* SLIDER */
 let slides=document.querySelectorAll('.hero-slider img');
 let i=0;
 setInterval(()=>{
@@ -381,8 +302,6 @@ setInterval(()=>{
   i=(i+1)%slides.length;
   slides[i].classList.add('active');
 },4000);
- 
-
 </script>
 
 </body>
